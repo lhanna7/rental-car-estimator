@@ -1,6 +1,6 @@
 class App {
   public static void main(String args[]) {
-    App.setParameters("5/24/22", 5, true, true, true, 26);
+    App.setParameters("5/24/22", 5, true, true, true, 24);
   }
 
   public static void setParameters(String pickupDate, int rentalDays, boolean tollTag, boolean gps, boolean roadside,
@@ -9,9 +9,11 @@ class App {
         + optionsLogic(rentalDays, tollTag, gps, roadside);
     System.out.println("Your grand total is: " + grandTotal);
     System.out.println("Breakdown of Costs");
-    System.out.println("Basic Rental:" + basicRental(rentalDays));
-    System.out.println("Under 25 Surcharge:" + underageSurcharge(age, rentalDays));
-    System.out.println("Options Cost:" + optionsLogic(rentalDays, tollTag, gps, roadside));
+    System.out.println("Basic Rental: " + basicRental(rentalDays));
+    String decimalPlace = String.format("%.2f", underageSurcharge(age, rentalDays));
+    System.out.println("Underage Surcharge: " + decimalPlace);
+    System.out.println("Options Cost: " + optionsLogic(rentalDays, tollTag, gps,
+        roadside));
   }
 
   private static double basicRental(int rentalDays) {
