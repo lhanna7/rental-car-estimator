@@ -1,6 +1,6 @@
 class App {
   public static void main(String args[]) {
-    App.setParameters("5/24/22", 5, true, true, true, 24);
+    App.setParameters("5/24/22", 5, true, true, true, 26);
   }
 
   public static void setParameters(String pickupDate, int rentalDays, boolean tollTag, boolean gps, boolean roadside,
